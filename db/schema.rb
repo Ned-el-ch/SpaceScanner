@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_113105) do
+ActiveRecord::Schema.define(version: 2019_11_11_130606) do
 
   create_table "bank_cards", force: :cascade do |t|
     t.integer "long_card_number"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2019_11_11_113105) do
 
   create_table "operators", force: :cascade do |t|
     t.string "name"
-    t.integer "rating"
     t.string "range"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -53,12 +52,11 @@ ActiveRecord::Schema.define(version: 2019_11_11_113105) do
 
   create_table "rockets", force: :cascade do |t|
     t.string "nickname"
-    t.string "model_name"
     t.integer "speed"
     t.integer "passenger_capacity"
-    t.string "thruster_model"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "ship_model_name"
   end
 
   create_table "trips", force: :cascade do |t|
@@ -67,7 +65,6 @@ ActiveRecord::Schema.define(version: 2019_11_11_113105) do
     t.integer "rocket_id"
     t.integer "operator_id"
     t.datetime "take_off_time"
-    t.datetime "landing_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
