@@ -92,3 +92,20 @@ end
     )
 
 end
+
+User.all.each do |user|
+
+    rand(1..10).times do |i|
+
+        Booking.create(
+
+            user: user,
+            trip: Trip.all.sample,
+            price: rand(12..100_000_000),
+            rating: rand(1..10)
+        
+        )
+
+    end
+
+end
