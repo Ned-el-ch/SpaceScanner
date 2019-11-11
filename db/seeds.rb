@@ -6,106 +6,106 @@ Rocket.destroy_all
 Trip.destroy_all
 User.destroy_all
 
-10.times do |i|
+# 10.times do |i|
 
-    User.create(
+#     User.create(
 
-        name: Faker::Name.unique.name,
-        bank_balance: rand(100_000..100_000_000),
-        email: Faker::Internet.email,
-        password: "pass#{i}"
+#         name: Faker::Name.unique.name,
+#         bank_balance: rand(100_000..100_000_000),
+#         email: Faker::Internet.email,
+#         password_digest: "pass#{i}"
 
-    )
+#     )
 
-end
+# end
 
-20.times do |i|
+# 20.times do |i|
 
-    BankCard.create(
+#     BankCard.create(
 
-        long_card_number: Faker::Business.credit_card_number,
-        ccv_code: Faker::Stripe.ccv,
-        expiry_month: Faker::Stripe.month,
-        expiry_year: Faker::Stripe.year,
-        user: User.all.sample,
-        billing_address: Faker::Address.full_address
+#         long_card_number: Faker::Business.credit_card_number,
+#         ccv_code: Faker::Stripe.ccv,
+#         expiry_month: Faker::Stripe.month,
+#         expiry_year: Faker::Stripe.year,
+#         user: User.all.sample,
+#         billing_address: Faker::Address.full_address
 
-    )
+#     )
 
-end
+# end
 
-route_types = ["Long Haul", "Medium Haul", "Short Haul"]
+# route_types = ["Long Haul", "Medium Haul", "Short Haul"]
 
-5.times do |i|
+# 5.times do |i|
 
-    Operator.create(
+#     Operator.create(
 
-        name: Faker::TvShows::SiliconValley.company,
-        range: route_types.sample
+#         name: Faker::TvShows::SiliconValley.company,
+#         range: route_types.sample
 
-    )
+#     )
 
-end
+# end
 
-hostility_levels = ["Low", "Medium", "High", "Extreme", "Literally Hell"]
+# hostility_levels = ["Low", "Medium", "High", "Extreme", "Literally Hell"]
 
-100.times do |i|
+# 100.times do |i|
 
-    Planet.create(
+#     Planet.create(
 
-        name: Faker::TvShows::RickAndMorty.location,
-        distance_from_earth: rand(10..10_000),
-        gravity: rand(0.1..7.0),
-        hostility_level: hostility_levels.sample,
-        population: rand(300_000_000..300_000_000_000),
-        breathable_atmosphere: [true, false].sample
+#         name: Faker::TvShows::RickAndMorty.location,
+#         distance_from_earth: rand(10..10_000),
+#         gravity: rand(0.1..7.0),
+#         hostility_level: hostility_levels.sample,
+#         population: rand(300_000_000..300_000_000_000),
+#         breathable_atmosphere: [true, false].sample
 
-    )
+#     )
 
-end
+# end
 
-Planet.where.not(id: Planet.group(:name).select("min(id)")).destroy_all
+# Planet.where.not(id: Planet.group(:name).select("min(id)")).destroy_all
 
-10.times do |i|
+# 10.times do |i|
 
-    Rocket.create(
+#     Rocket.create(
 
-        nickname: Faker::Movies::StarWars.vehicle,
-        ship_model_name: Faker::Movies::StarWars.droid,
-        speed: rand(0.01..100.0),
-        passenger_capacity: (rand(40..300) * 10)
+#         nickname: Faker::Movies::StarWars.vehicle,
+#         ship_model_name: Faker::Movies::StarWars.droid,
+#         speed: rand(0.01..100.0),
+#         passenger_capacity: (rand(4..20) * 10)
 
-    )
+#     )
 
-end
+# end
 
-30.times do |i|
+# 30.times do |i|
 
-    Trip.create(
+#     Trip.create(
 
-        origin_id: Planet.all.sample.id,
-        destination_id: Planet.all.sample.id,
-        rocket: Rocket.all.sample,
-        operator: Operator.all.sample,
-        take_off_time: DateTime.iso8601("#{rand(3008..3016)}-0#{rand(1..9)}-#{rand(10..28)}", Date::ENGLAND)
+#         origin_id: Planet.all.sample.id,
+#         destination_id: Planet.all.sample.id,
+#         rocket: Rocket.all.sample,
+#         operator: Operator.all.sample,
+#         take_off_time: DateTime.iso8601("#{rand(3008..3016)}-0#{rand(1..9)}-#{rand(10..28)}", Date::ENGLAND)
 
-    )
+#     )
 
-end
+# end
 
-User.all.each do |user|
+# User.all.each do |user|
 
-    rand(1..10).times do |i|
+#     rand(1..10).times do |i|
 
-        Booking.create(
+#         Booking.create(
 
-            user: user,
-            trip: Trip.all.sample,
-            price: rand(12..100_000_000),
-            rating: rand(1..10)
+#             user: user,
+#             trip: Trip.all.sample,
+#             price: rand(100_000..10_000_000),
+#             rating: rand(1..10)
         
-        )
+#         )
 
-    end
+#     end
 
-end
+# end

@@ -1,15 +1,30 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <title>SpaceScanner</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <head>
 
-  <body>
+        <title>SpaceScanner</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    </head>
+
+    <body>
+
+    <div class="topnav">
+
+        <a class="active" href="/">Home</a>
+        <a href="/trips">My Trips</a>
+        <a href="/account">My Account</a>
+
+    </div>
+
     <%= yield %>
-  </body>
+
+    </body>
+
 </html>

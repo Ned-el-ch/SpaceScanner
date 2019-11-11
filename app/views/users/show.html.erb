@@ -1,0 +1,34 @@
+<h1><%= link_to "All Users", users_path %></h1>
+
+<ul>
+
+    <li>
+
+        Name: <%= @user.name %><br/>
+        Net Worth: $<%= @user.bank_balance %><br/>
+
+    </li></br>
+
+    <li>
+
+        Bookings: <ul><% @user.bookings.each do |booking| %>
+
+            <li>
+            Booking Reference: <%= booking.id %><br/>
+            <ul>
+
+                <li>Rating: <%= booking.rating %>⭐️</li>
+                <li>From: <%= booking.trip.origin_planet.name %></li>
+                <li>To: <%= booking.trip.destination_planet.name %></li>
+                <li>Cost: $<%= booking.price %></li>
+                <li>Carrier: <%= booking.trip.operator.name %></li>
+                <li>Rocketship Name: <%= booking.trip.rocket.nickname %></li>
+                <li>Rocketship Capacity: <%= booking.trip.rocket.passenger_capacity %></li>
+                
+            </ul>
+            </li><br/>
+        <% end%>
+        </ul>
+    </li>
+
+</ul>
