@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  destination_id: 1
+  origin_id: 1
+  rocket_id: 1
+  operator_id: 1
+  take_off_time: 2019-11-11 10:52:46
+  landing_time: 2019-11-11 10:52:46
+
+two:
+  destination_id: 1
+  origin_id: 1
+  rocket_id: 1
+  operator_id: 1
+  take_off_time: 2019-11-11 10:52:46
+  landing_time: 2019-11-11 10:52:46

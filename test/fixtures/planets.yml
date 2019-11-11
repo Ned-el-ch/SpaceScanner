@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  distance_from_earth: 1
+  gravity: 1
+  hostility_level: MyString
+  population: 1
+  breathable_atmosphere: false
+
+two:
+  name: MyString
+  distance_from_earth: 1
+  gravity: 1
+  hostility_level: MyString
+  population: 1
+  breathable_atmosphere: false
