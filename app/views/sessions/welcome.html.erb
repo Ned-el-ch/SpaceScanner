@@ -1,15 +1,20 @@
-<h1>Welcome</h1>
+<h1>SpaceScanner</h1>
+
 <% if logged_in? %>
     <h1>You are Logged In, <%= current_user.name %></h1>
 <%end%>
 
 <% if !logged_in?%>
 
-    <%= button_to "Log In", '/login', method: :get%>
-    <%= button_to "Sign Up", '/users/new', method: :get%>
+    <div class="welcome">
+
+        <%= button_to "Log In", '/login', method: :get, class: 'log_in_button welcome_buttons'%>
+        <%= button_to "Sign Up", '/users/new', method: :get, class: 'sign_up_button welcome_buttons'%>
+
+    </div>
 
 <% else%>
 
-    <%= button_to "Log Out", '/logout', method: :post%>
+    <%= button_to "Log Out", '/logout', method: :post, class: 'log_out_button'%>
 
 <% end%>

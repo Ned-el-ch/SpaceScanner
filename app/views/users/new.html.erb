@@ -2,18 +2,18 @@
 
 <%= form_for @user do |f|%>
 
-    <%= f.label :name%><br>
-    <%= f.text_field :name%><br>
+    <%= f.label :name, class: 'input_label'%><br>
+    <%= f.text_field :name, class: 'input_field name_field' %><br>
 
-    <%= f.label :bank_balance%><br>
-    <%= f.number_field :bank_balance%><br>
+    <%= f.label :bank_balance, class: 'input_label'%><br>
+    <%= f.number_field :bank_balance, class: 'input_field bank_balance_field' %><br>
 
-    <%= f.label :email%><br>
-    <%= f.text_field :email%><br>
+    <%= f.label :email, class: 'input_label'%><br>
+    <%= f.text_field :email, class: 'input_field email_field' %><br>
 
-    <%= f.label :password%><br>
-    <%= f.password_field :password%><br>
+    <%= f.label :password, class: 'input_label'%><br>
+    <%= f.password_field :password, class: 'input_field password_field' %><br>
 
-    <%= f.submit %>
+    <%= f.submit%>
 
 <%end%>
