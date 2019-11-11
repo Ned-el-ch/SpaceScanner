@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_105246) do
+ActiveRecord::Schema.define(version: 2019_11_11_113105) do
 
   create_table "bank_cards", force: :cascade do |t|
-    t.string "name_on_card"
     t.integer "long_card_number"
-    t.integer "cvc_code"
+    t.integer "ccv_code"
     t.string "billing_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "expiry_month"
+    t.integer "expiry_year"
+    t.integer "user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -75,6 +77,8 @@ ActiveRecord::Schema.define(version: 2019_11_11_105246) do
     t.integer "bank_balance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
+    t.string "password"
   end
 
 end
