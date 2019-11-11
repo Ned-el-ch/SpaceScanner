@@ -20,5 +20,5 @@ Rails.application.routes.draw do
     post 'logout', to: 'sessions#logout'
 
     get 'authorized', to: 'sessions#page_requires_login'
-    
+
 end

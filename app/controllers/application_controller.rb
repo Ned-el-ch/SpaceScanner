@@ -6,16 +6,21 @@ class ApplicationController < ActionController::Base
     helper_method :logged_in?
 
     def current_user
+
         User.find_by(id: session[:user_id])
+
     end
 
     def logged_in?
-           
+
         !current_user.nil?
+
     end
-    
+
     def authorized
-       redirect_to '/welcome' unless logged_in?
+
+        redirect_to '/welcome' unless logged_in?
+
     end
     
     def home
@@ -29,6 +34,5 @@ class ApplicationController < ActionController::Base
     def trips
 
     end
-
 
 end
