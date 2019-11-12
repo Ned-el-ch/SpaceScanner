@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'faker'
 gem 'bcrypt'
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
